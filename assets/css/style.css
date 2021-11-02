@@ -86,17 +86,17 @@ button, #done, #removeTask, #restore, #redo {
     cursor: pointer;
 }
 
-.cestino {
+.cestino, .completati {
     display: flex;
 }
 
-.cestino p {
+.cestino p, .completati p {
     margin-left: 1rem;
     color: #a5a5a5;
     cursor: pointer;
 }
 
-.cestino p:hover {
+.cestino p:hover, .completati p:hover {
     color: #00e165;
 }
 

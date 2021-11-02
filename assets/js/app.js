@@ -50,6 +50,9 @@ const root = new Vue({
         },
         emptyTrash() {
             this.removedTasks = [];
+        },
+        emptyCompleted() {
+            this.completedTasks = [];
         }
     }
 })
