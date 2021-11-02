@@ -69,7 +69,10 @@
 
                 <div class="container">
 
-                    <h4>Eliminati</h4>
+                    <div class="cestino">
+                        <h4>Cestino</h4>
+                        <p @click="emptyTrash">(Svuota)</p>
+                    </div>
 
                     <div id="removedTasks">
                         <div id="removedTask" v-for="(removedTask, index) in

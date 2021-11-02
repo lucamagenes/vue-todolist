@@ -38,6 +38,9 @@ const root = new Vue({
         restoreTask(i, removedTask) {
             this.removedTasks.splice(i, 1);
             this.tasks.push(removedTask);
+        },
+        emptyTrash() {
+            this.removedTasks = [];
         }
     }
 })

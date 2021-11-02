@@ -54,3 +54,17 @@ h4 {
 button, #done, #removeTask, #restore {
     cursor: pointer;
 }
+
+.cestino {
+    display: flex;
+}
+
+.cestino p {
+    margin-left: 1rem;
+    color: #a5a5a5;
+    cursor: pointer;
+}
+
+.cestino p:hover {
+    color: red;
+}
