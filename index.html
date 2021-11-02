@@ -17,7 +17,7 @@
 
             <div id="addTask">
                 <input type="text" placeholder="Aggiungi una nuova task"
-                    v-model="newTask">
+                    v-model="newTask" v-on:keyup.enter="addTask">
                 <button @click="addTask">Aggiungi</button>
             </div>
             <div id="error" style="color: red;" v-show="error">

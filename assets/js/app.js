@@ -13,9 +13,9 @@ const root = new Vue({
     data: {
         newTask: '',
         tasks: [
-            'learn someting',
-            'learn else',
-            'learn someting else',
+            'Fare i compiti',
+            'Fare la spesa',
+            'Fare il bucato',
         ],
         error: false,
     },
