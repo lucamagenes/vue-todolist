@@ -38,101 +38,109 @@
 
                 <div class="container">
 
-                    <h4>Todo List</h4>
+                    <div class="todo">
 
-                    <div id="tasks" v-if="tasks.length> 0">
-                        <div id="task" v-for="(task, index) in tasks">
-                            <div class="text">
-                                {{task}}
-                            </div>
+                        <h4>Todo List</h4>
 
-                            <div class="actions">
-
-                                <div id="done">
-                                    <i class="fas fa-check fa-lg fa-fw"
-                                        @click="completeTask(index,
-                                        tasks[index])"></i>
+                        <div id="tasks" v-if="tasks.length> 0">
+                            <div id="task" v-for="(task, index) in tasks">
+                                <div class="text">
+                                    {{task}}
                                 </div>
-                                <div id="removeTask">
-                                    <i class="fas fa-times fa-lg fa-fw"
-                                        @click="removeTask(index,
-                                        tasks[index])"></i>
+
+                                <div class="actions">
+
+                                    <div id="done">
+                                        <i class="fas fa-check fa-lg fa-fw"
+                                            @click="completeTask(index,
+                                            tasks[index])"></i>
+                                    </div>
+                                    <div id="removeTask">
+                                        <i class="fas fa-times fa-lg fa-fw"
+                                            @click="removeTask(index,
+                                            tasks[index])"></i>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div v-else>
+                            <p>
+                                Non ci sono tasks, goditi la giornata oppure
+                                creane
+                                una
+                                nuova!
+                            </p>
+                        </div>
+
+                    </div>
+                    <!-- Todo list -->
+
+                    <div class="completed">
+
+                        <div class="completati">
+                            <h4>Completati</h4>
+                        </div>
+
+                        <div id="completedTasks">
+                            <div id="completedTask" v-for="(completedTask,
+                                index) in
+                                completedTasks">
+
+                                <div class="text">
+                                    {{completedTask}}
+                                </div>
+
+                                <div class="actions">
+
+                                    <div id="redo">
+                                        <i class="fas fa-redo fa-lg fa-fw"
+                                            @click="redoTask(index,
+                                            completedTasks[index])"></i>
+                                    </div>
+
                                 </div>
 
                             </div>
                         </div>
+
                     </div>
-                    <div v-else>
-                        <p>
-                            Non ci sono tasks, goditi la giornata oppure creane
-                            una
-                            nuova!
-                        </p>
-                    </div>
+                    <!-- Completati -->
 
-                </div>
-                <!-- Todo list -->
+                    <div class="trash">
 
-                <div class="container">
+                        <div class="cestino">
+                            <h4>Cestino</h4>
+                            <p @click="emptyTrash">(Svuota)</p>
+                        </div>
 
-                    <div class="completati">
-                        <h4>Completati</h4>
-                    </div>
+                        <div id="removedTasks">
+                            <div id="removedTask" v-for="(removedTask, index) in
+                                removedTasks">
 
-                    <div id="completedTasks">
-                        <div id="completedTask" v-for="(completedTask, index) in
-                            completedTasks">
+                                <div class="text">
+                                    {{removedTask}}
+                                </div>
 
-                            <div class="text">
-                                {{completedTask}}
-                            </div>
+                                <div class="actions">
 
-                            <div class="actions">
+                                    <div id="restore">
+                                        <i class="fas fa-trash-restore fa-lg
+                                            fa-fw"
+                                            @click="restoreTask(index,
+                                            removedTasks[index])"></i>
+                                    </div>
 
-                                <div id="redo">
-                                    <i class="fas fa-redo fa-lg fa-fw"
-                                        @click="redoTask(index,
-                                        completedTasks[index])"></i>
                                 </div>
 
                             </div>
-
                         </div>
+
                     </div>
+                    <!-- Cestino -->
 
                 </div>
-                <!-- Completati -->
 
-                <div class="container">
-
-                    <div class="cestino">
-                        <h4>Cestino</h4>
-                        <p @click="emptyTrash">(Svuota)</p>
-                    </div>
-
-                    <div id="removedTasks">
-                        <div id="removedTask" v-for="(removedTask, index) in
-                            removedTasks">
-
-                            <div class="text">
-                                {{removedTask}}
-                            </div>
-
-                            <div class="actions">
-
-                                <div id="restore">
-                                    <i class="fas fa-trash-restore fa-lg fa-fw"
-                                        @click="restoreTask(index,
-                                        removedTasks[index])"></i>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-                <!-- Cestino -->
 
 
             </main>
