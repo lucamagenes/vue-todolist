@@ -16,7 +16,8 @@ const root = new Vue({
             'learn someting',
             'learn else',
             'learn someting else',
-        ]
+        ],
+        error: false,
     },
     methods: {
         removeTask(i) {
@@ -25,6 +26,9 @@ const root = new Vue({
         addTask() {
             if (this.newTask.length != '' && this.newTask.length > 6) {
                 this.tasks.push(this.newTask);
+                this.error = false;
+            } else {
+                this.error = true;
             }
             this.newTask = '';
         }

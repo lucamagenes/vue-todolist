@@ -20,6 +20,9 @@
                     v-model="newTask">
                 <button @click="addTask">Aggiungi</button>
             </div>
+            <div id="error" style="color: red;" v-show="error">
+                Devi inserire una task che abbia almeno 6 caratteri!
+            </div>
 
             <div id="tasks" v-if="tasks.length> 0">
                 <div id="task" v-for="(task, index) in tasks">
