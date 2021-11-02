@@ -37,12 +37,12 @@ h4 {
     margin-bottom: 0.5rem;
 }
 
-#task, .actions, #removedTask {
+#task, .actions, #removedTask, #completedTask {
     display: flex;
     justify-content: space-between;
 }
 
-#task, #removedTask {
+#task, #removedTask, #completedTask {
     border-bottom: 1px solid #bebebe;
     padding: 0.5rem 0.3rem;
 }
@@ -51,7 +51,7 @@ h4 {
     margin: 0 0.5rem;
 }
 
-button, #done, #removeTask, #restore {
+button, #done, #removeTask, #restore, #redo {
     cursor: pointer;
 }
 

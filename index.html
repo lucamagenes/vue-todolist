@@ -20,6 +20,7 @@
                     <img :src="logo" alt="" width="300">
                 </div>
             </header>
+            <!-- logo -->
 
             <main>
 
@@ -28,10 +29,12 @@
                         v-model="newTask" v-on:keyup.enter="addTask">
                     <button @click="addTask">Aggiungi</button>
                 </div>
+                <!-- input and button -->
                 <div id="error" style="color: red; margin-top: 0.2rem;"
                     v-show="error">
                     Devi inserire una task che abbia almeno 6 caratteri!
                 </div>
+                <!-- error text -->
 
                 <div class="container">
 
@@ -46,7 +49,9 @@
                             <div class="actions">
 
                                 <div id="done">
-                                    <i class="fas fa-check fa-lg fa-fw"></i>
+                                    <i class="fas fa-check fa-lg fa-fw"
+                                        @click="completeTask(index,
+                                        tasks[index])"></i>
                                 </div>
                                 <div id="removeTask">
                                     <i class="fas fa-times fa-lg fa-fw"
@@ -66,6 +71,37 @@
                     </div>
 
                 </div>
+                <!-- Todo list -->
+
+                <div class="container">
+
+                    <div class="completati">
+                        <h4>Completati</h4>
+                    </div>
+
+                    <div id="completedTasks">
+                        <div id="completedTask" v-for="(completedTask, index) in
+                            completedTasks">
+
+                            <div class="text">
+                                {{completedTask}}
+                            </div>
+
+                            <div class="actions">
+
+                                <div id="redo">
+                                    <i class="fas fa-redo fa-lg fa-fw"
+                                        @click="redoTask(index,
+                                        completedTasks[index])"></i>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Completati -->
 
                 <div class="container">
 
@@ -96,9 +132,11 @@
                     </div>
 
                 </div>
+                <!-- Cestino -->
 
 
             </main>
+            <!-- main site -->
 
 
         </div>

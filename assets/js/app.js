@@ -19,12 +19,17 @@ const root = new Vue({
             'Fare il bucato',
         ],
         removedTasks: [],
+        completedTasks: [],
         error: false,
     },
     methods: {
         removeTask(i, task) {
             this.tasks.splice(i, 1);
             this.removedTasks.push(task);
+        },
+        completeTask(i, task) {
+            this.tasks.splice(i, 1);
+            this.completedTasks.push(task);
         },
         addTask() {
             if (this.newTask.length != '' && this.newTask.length > 6) {
@@ -38,6 +43,10 @@ const root = new Vue({
         restoreTask(i, removedTask) {
             this.removedTasks.splice(i, 1);
             this.tasks.push(removedTask);
+        },
+        redoTask(i, completedTask) {
+            this.completedTasks.splice(i, 1);
+            this.tasks.push(completedTask);
         },
         emptyTrash() {
             this.removedTasks = [];
