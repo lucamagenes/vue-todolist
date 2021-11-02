@@ -11,6 +11,7 @@ predisporre un input per aggiungere un nuovo item alla lista: digitando il tasto
 const root = new Vue({
     el: '#root',
     data: {
+        logo: 'https://www.boolean.careers/images/misc/logo.png',
         newTask: '',
         tasks: [
             'Fare i compiti',
@@ -31,6 +32,7 @@ const root = new Vue({
                 this.error = true;
             }
             this.newTask = '';
-        }
+        },
+
     }
 })

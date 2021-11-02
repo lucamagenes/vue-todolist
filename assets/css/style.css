@@ -3,3 +3,45 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+body {
+    font-family: sans-serif;
+}
+
+header, main {
+    width: 500px;
+    margin: 1rem auto;
+    text-align: center;
+}
+
+input, button {
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    border-width: 1px;
+}
+
+input {
+    width: 70%;
+    margin-right: 0.5rem;
+}
+
+.container {
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: #ededed;
+    border-radius: 10px;
+}
+
+#task, .actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+#task {
+    border-bottom: 1px solid #bebebe;
+    padding: 0.5rem 0.3rem;
+}
+
+#done {
+    margin: 0 0.5rem;
+}

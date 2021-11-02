@@ -15,29 +15,54 @@
 
         <div id="root">
 
-            <div id="addTask">
-                <input type="text" placeholder="Aggiungi una nuova task"
-                    v-model="newTask" v-on:keyup.enter="addTask">
-                <button @click="addTask">Aggiungi</button>
-            </div>
-            <div id="error" style="color: red;" v-show="error">
-                Devi inserire una task che abbia almeno 6 caratteri!
-            </div>
-
-            <div id="tasks" v-if="tasks.length> 0">
-                <div id="task" v-for="(task, index) in tasks">
-                    <div class="text">
-                        {{task}}
-                    </div>
-                    <div id="removeTask">
-                        <i class="fas fa-times-circle fa-lg fa-fw"
-                            @click="removeTask(index)"></i>
-                    </div>
+            <header>
+                <div class="logo">
+                    <img :src="logo" alt="" width="300">
                 </div>
-            </div>
-            <div v-else>
-                Non ci sono tasks, goditi la giornata oppure creane una nuova!
-            </div>
+            </header>
+
+            <main>
+
+                <div id="addTask">
+                    <input type="text" placeholder="Nuovo Todo"
+                        v-model="newTask" v-on:keyup.enter="addTask">
+                    <button @click="addTask">Aggiungi</button>
+                </div>
+                <div id="error" style="color: red;" v-show="error">
+                    Devi inserire una task che abbia almeno 6 caratteri!
+                </div>
+
+                <div class="container">
+
+                    <div id="tasks" v-if="tasks.length> 0">
+                        <div id="task" v-for="(task, index) in tasks">
+                            <div class="text">
+                                {{task}}
+                            </div>
+
+                            <div class="actions">
+
+                                <div id="done">
+                                    <i class="fas fa-check fa-lg fa-fw"></i>
+                                </div>
+                                <div id="removeTask">
+                                    <i class="fas fa-times fa-lg fa-fw"
+                                        @click="removeTask(index)"></i>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div v-else>
+                        Non ci sono tasks, goditi la giornata oppure creane una
+                        nuova!
+                    </div>
+
+                </div>
+
+
+            </main>
+
 
         </div>
 
