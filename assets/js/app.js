@@ -11,6 +11,7 @@ predisporre un input per aggiungere un nuovo item alla lista: digitando il tasto
 const root = new Vue({
     el: '#root',
     data: {
+        newTask: '',
         tasks: [
             'learn someting',
             'learn else',
@@ -20,6 +21,12 @@ const root = new Vue({
     methods: {
         removeTask(i) {
             this.tasks.splice(i, 1);
+        },
+        addTask() {
+            if (this.newTask.length != '' && this.newTask.length > 6) {
+                this.tasks.push(this.newTask);
+            }
+            this.newTask = '';
         }
     }
 })

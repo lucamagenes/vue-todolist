@@ -15,6 +15,12 @@
 
         <div id="root">
 
+            <div id="addTask">
+                <input type="text" placeholder="Aggiungi una nuova task"
+                    v-model="newTask">
+                <button @click="addTask">Aggiungi</button>
+            </div>
+
             <div id="tasks" v-if="tasks.length> 0">
                 <div id="task" v-for="(task, index) in tasks">
                     <div class="text">
