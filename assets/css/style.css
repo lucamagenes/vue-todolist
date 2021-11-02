@@ -30,6 +30,11 @@ input {
     margin-right: 0.5rem;
 }
 
+button:hover {
+    box-shadow: 2px 2px 2px #a5a5a5;
+    background-color: white;
+}
+
 .container {
     display: flex;
     justify-content: center;
@@ -92,7 +97,7 @@ button, #done, #removeTask, #restore, #redo {
 }
 
 .cestino p:hover {
-    color: red;
+    color: #00e165;
 }
 
 .noTasks {
