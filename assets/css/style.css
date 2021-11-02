@@ -42,7 +42,7 @@ h4 {
     justify-content: space-between;
 }
 
-#task {
+#task, #removedTask {
     border-bottom: 1px solid #bebebe;
     padding: 0.5rem 0.3rem;
 }
@@ -51,6 +51,6 @@ h4 {
     margin: 0 0.5rem;
 }
 
-button, #done, #removeTask {
+button, #done, #removeTask, #restore {
     cursor: pointer;
 }
