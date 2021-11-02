@@ -15,7 +15,7 @@
 
         <div id="root">
 
-            <div id="tasks">
+            <div id="tasks" v-if="(tasks.index> 0)">
                 <div id="task" v-for="(task, index) in tasks">
                     <div class="text">
                         {{task}}
@@ -25,6 +25,9 @@
                             @click="removeTask(index)"></i>
                     </div>
                 </div>
+            </div>
+            <div v-else>
+                Non ci sono tasks, goditi la giornata oppure creane una nuova!
             </div>
 
         </div>

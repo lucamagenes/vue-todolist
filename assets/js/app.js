@@ -19,7 +19,6 @@ const root = new Vue({
     },
     methods: {
         removeTask(i) {
-            console.log('click remove');
             this.tasks.splice(i, 1);
         }
     }
