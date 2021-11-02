@@ -37,6 +37,7 @@ input {
 
 .todo {
     width: 400px;
+    position: relative;
 }
 
 .completed {
@@ -92,4 +93,11 @@ button, #done, #removeTask, #restore, #redo {
 
 .cestino p:hover {
     color: red;
+}
+
+.noTasks {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
