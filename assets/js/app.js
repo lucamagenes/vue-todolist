@@ -11,6 +11,16 @@ predisporre un input per aggiungere un nuovo item alla lista: digitando il tasto
 const root = new Vue({
     el: '#root',
     data: {
-
+        tasks: [
+            'learn someting',
+            'learn else',
+            'learn someting else',
+        ]
+    },
+    methods: {
+        removeTask(i) {
+            console.log('click remove');
+            this.tasks.splice(i, 1);
+        }
     }
 })
