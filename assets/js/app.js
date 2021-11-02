@@ -35,6 +35,9 @@ const root = new Vue({
             }
             this.newTask = '';
         },
-
+        restoreTask(i, removedTask) {
+            this.removedTasks.splice(i, 1);
+            this.tasks.push(removedTask);
+        }
     }
 })
