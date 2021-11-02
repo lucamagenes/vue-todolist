@@ -32,7 +32,12 @@ input {
     border-radius: 10px;
 }
 
-#task, .actions {
+h4 {
+    text-align: left;
+    margin-bottom: 0.5rem;
+}
+
+#task, .actions, #removedTask {
     display: flex;
     justify-content: space-between;
 }
@@ -44,4 +49,8 @@ input {
 
 #done {
     margin: 0 0.5rem;
+}
+
+button, #done, #removeTask {
+    cursor: pointer;
 }

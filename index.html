@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Vue TodoList</title>
         <link rel="stylesheet"
-            href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
-            integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
-            crossorigin="anonymous">
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="./assets/css/style.css">
     </head>
     <body>
@@ -28,11 +28,14 @@
                         v-model="newTask" v-on:keyup.enter="addTask">
                     <button @click="addTask">Aggiungi</button>
                 </div>
-                <div id="error" style="color: red;" v-show="error">
+                <div id="error" style="color: red; margin-top: 0.2rem;"
+                    v-show="error">
                     Devi inserire una task che abbia almeno 6 caratteri!
                 </div>
 
                 <div class="container">
+
+                    <h4>Todo List</h4>
 
                     <div id="tasks" v-if="tasks.length> 0">
                         <div id="task" v-for="(task, index) in tasks">
@@ -54,8 +57,36 @@
                         </div>
                     </div>
                     <div v-else>
-                        Non ci sono tasks, goditi la giornata oppure creane una
-                        nuova!
+                        <p>
+                            Non ci sono tasks, goditi la giornata oppure creane
+                            una
+                            nuova!
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="container">
+
+                    <h4>Eliminati</h4>
+
+                    <div id="removedTasks">
+                        <div id="removedTask" v-for="(removedTask, index) in
+                            removedTasks">
+
+                            <div class="text">
+                                {{removedTask}}
+                            </div>
+
+                            <div class="actions">
+
+                                <div id="restore">
+                                    <i class="fas fa-trash-restore fa-lg fa-fw"></i>
+                                </div>
+
+                            </div>
+
+                        </div>
                     </div>
 
                 </div>

@@ -18,11 +18,15 @@ const root = new Vue({
             'Fare la spesa',
             'Fare il bucato',
         ],
+        removedTasks: [
+
+        ],
         error: false,
     },
     methods: {
         removeTask(i) {
-            this.tasks.splice(i, 1);
+            //this.tasks.splice(i, 1);
+            this.removedTasks.push(this.tasks.splice(i, 1));
         },
         addTask() {
             if (this.newTask.length != '' && this.newTask.length > 6) {
